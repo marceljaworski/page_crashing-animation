@@ -9,6 +9,8 @@ body {
 
   display: grid;
   grid-template-columns: 80% auto;
+
+  animation: break 6s ease-in-out forwards;
 }
 
 header {
@@ -30,4 +32,61 @@ aside {
   grid-column: 2;
   background: gray;
   padding: 1rem;
+}
+
+#boom {
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  width: 200px;
+  height: 200px;
+  background-image: url(boom.gif);
+  background-size: cover;
+  animation: crash 6s linear;
+}
+
+@keyframes crash {
+  0% {
+    translate: -100vw;
+    background-image: url(moon.webp);
+  }
+  49% {
+    background-image: url(moon.webp);
+  }
+  50% { 
+    translate: 0;
+    background-image: url(boom.gif);
+  }
+  60% { 
+    translate: 0;
+    background-image: url(boom.gif);
+  }
+}
+
+@keyframes break {
+  50% {
+    rotate: 0deg;
+    color: white;
+  }
+  52% {
+    rotate: 1deg;
+    color: red;
+  }
+  54% {
+    rotate: -1deg;
+  }
+  56% {
+    rotate: 2deg;
+  }
+  58% {
+    rotate: -2deg;
+
+  }
+  60% {
+    rotate: 6deg;
+    color: white;
+  }
+  100% {
+    rotate: 6deg;
+  }
 }
